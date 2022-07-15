@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gender Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Gender based on Name</h1>
+
+    <div class="results" align="center">
+      
+      {% if train_indicator == True%}
+      <h2 style="color:rgb(255, 0, 170);">Train model first</h2>
+      {% elif train_indicator == 1%}
+      <h2 style="color:rgb(94, 139, 234);">Proceed</h2>
+      {% endif %}
+      </a>
+    </div>
+
+     <h3> Choose what you want to do </h3>
+
+     <div class="buttons">
+
+        <div class="action_btn">
+        <a href="{{ url_for('train')}}">
+          <button>Train Model</button>
+        </a>
+        <div>
+        Wait for the training to finish. A notification will appear once training is done.
+        </div>
+        <div class="action_btn">
+          <a href="{{ url_for('predict')}}">
+            <button>Try Predict</button>
+          </a>
+
+        </div>
+
+    </div>
+
+   <br>
+   <br>
+
+ </div>
+
+
+</body>
+</html>

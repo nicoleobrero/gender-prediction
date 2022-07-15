@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+	<meta charset="UTF-8">
+	<title>Gender Prediction</title>
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Gender based on Name</h1>
+
+    <!-- Receiving Inputs for ML Prediction -->
+		<form action="{{ url_for('result')}}" method="POST">
+		<p>Enter Name Here:</p>
+		<textarea name="message" rows="4" cols="50"></textarea>
+		<br/>
+		<br/>
+		<input type="submit" class="btn-info" value="Predict">	
+		</form>		
+	{{ prediction_text }}	
+   <br>
+
+   <br>
+
+
+	<div><a href="..">
+		<input type="submit" value="Go Back..">
+	</div>
+
+ </div>
+
+</body>
+</html>
